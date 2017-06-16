@@ -1,10 +1,9 @@
-#+ endpoint: http://dbpedia.org/sparql
-#+ method: GET
 #+ summary: Selects all resources.
 
 SELECT ?s ?p ?o 
+FROM <http://dbpedia.org/sparql>
 WHERE {
 	?s ?p ?o .
 }
 
-LIMIT 10
+LIMIT 4
