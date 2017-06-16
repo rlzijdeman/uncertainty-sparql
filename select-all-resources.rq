@@ -4,5 +4,7 @@
 
 SELECT ?s ?p ?o 
 WHERE {
-	?s ?p ?_object_iri .
+	?s ?p ?o .
 }
+
+LIMIT 10
