@@ -13,5 +13,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 SELECT  ?dId ?decisionText
 WHERE {
-   ?dId a framework:Decision; msobd:hasDecisionStatement ?decisionText.
+   ?dId a framework:Decision .
+   ?dId msobd:hasDecisionStatement ?decisionText .
 }
