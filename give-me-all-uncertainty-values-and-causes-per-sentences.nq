@@ -1,6 +1,6 @@
 #+ endpoint: http://fuseki:3030/suds/query
 #+ method: GET
-#+ summary: Give me all uncertainty values (and causes) per sentence 
+#+ summary: Give me all uncertainty values and causes per sentence 
 
 PREFIX causes: <http://uncertainty/causes#>
 PREFIX framework: <http://uncertainty/framework#>
