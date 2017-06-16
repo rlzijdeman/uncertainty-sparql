@@ -1,0 +1,21 @@
+#+ endpoint: http://fuseki:3030/suds/query
+#+ method: GET
+#+ summary: Give me all sentences per aleatory and epistemic per decision
+
+PREFIX causes: <http://uncertainty/causes#>
+PREFIX framework: <http://uncertainty/framework#>
+PREFIX msobd: <http://uncertainty/msobd#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX urw3: <http://uncertainty/urw3#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT  ?nature (COUNT(?nature)  as ?count)
+WHERE {
+	?_d a framework:Decision .
+	?s1 msobd:hasDecision ?_d; a framework:Sentence .
+	?s2 a urw3:Sentence; owl:sameAs ?s1; urw3:hasUncertainty ?u.
+	?u urw3:nature ?nature.
+} GROUP BY ?nature
+
